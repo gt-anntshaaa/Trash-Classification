@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nim">191110035</string>
+    <string name="deep_learning">Deep Learning</string>
+    <string name="quick_easy_classification"><![CDATA[Quick & Easy Classification]]></string>
+    <string name="reuse_reduce_recycle">Reuse, Reduce, Recycle</string>
+    <string name="right_button">right button</string>
+    <string name="ilustration">ilustration</string>
+    <string name="save_the_earth">Save the environment starting \nfrom your own action</string>
+    <string name="garbage_classification">Garbage Classification</string>
+    <string name="garbage_pic">garbage pic</string>
+    <string name="camera">Camera</string>
+    <string name="images">Images</string>
+    <string name="galeri">galeri</string>
+    <string name="result">View Result</string>
+</resources>

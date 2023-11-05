@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/color_primary"
+    tools:context=".presentation.view.classify.ClassificationFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:id="@+id/frameLayout">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/garbage"
+            android:contentDescription="@string/garbage_pic" />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/images"
+            android:visibility="gone"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_150sdp"
+            app:shapeAppearanceOverlay="@style/Circular"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center"
+            app:strokeColor="@color/black"
+            app:strokeWidth="@dimen/_2sdp"
+            android:src="@drawable/garbage"/>
+
+    </FrameLayout>
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        app:cardBackgroundColor="@color/white"
+        android:layout_gravity="bottom">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_10sdp">
+            <TextView
+                android:id="@+id/garbageClassification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/garbage_classification"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_25ssp"
+                android:textAlignment="center"
+                android:fontFamily="@font/pompiere"/>
+            <TextView
+                android:id="@+id/subtittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/garbageClassification"
+                android:text="@string/save_the_earth"
+                android:textSize="@dimen/_10ssp"
+                android:lineSpacingExtra="@dimen/_3sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="monospace"
+                android:textColor="#494848"
+                android:gravity="center_horizontal"
+                app:layout_constraintStart_toStartOf="@id/garbageClassification"
+                app:layout_constraintEnd_toEndOf="@id/garbageClassification"/>
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/extended_take_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@id/subtittle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/galeri_fab"
+                app:icon="@drawable/ic_add_photo_24"
+                android:text="@string/images"/>
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/camera_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/extended_take_pic"
+                app:layout_constraintEnd_toStartOf="@id/galeri_fab"
+                app:layout_constraintBottom_toBottomOf="@id/extended_take_pic"
+                app:fabSize="mini"
+                android:src="@drawable/ic_camera"
+                android:contentDescription="@string/camera" />
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/galeri_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/extended_take_pic"
+                app:fabSize="mini"
+                android:layout_marginEnd="@dimen/_2sdp"
+                android:src="@drawable/ic_image_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:contentDescription="@string/galeri" />
+            <Button
+                android:id="@+id/result_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/result"
+                android:visibility="gone"
+                style="@style/Widget.Material3.Button.TextButton"
+                app:layout_constraintTop_toBottomOf="@id/extended_take_pic"
+                app:layout_constraintStart_toStartOf="@id/extended_take_pic"
+                app:layout_constraintEnd_toEndOf="@id/extended_take_pic"
+                android:layout_marginTop="@dimen/_8sdp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>
