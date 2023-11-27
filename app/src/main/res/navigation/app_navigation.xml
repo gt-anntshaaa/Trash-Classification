@@ -38,19 +38,5 @@
         android:id="@+id/classificationFragment"
         android:name="com.example.trashclassification.presentation.view.classify.ClassificationFragment"
         android:label="Classification"
-        tools:layout="@layout/fragment_classification" >
-        <action
-            android:id="@+id/action_classification_to_result"
-            app:destination="@id/resultFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/resultFragment"
-        android:name="com.example.trashclassification.presentation.view.result.ResultFragment"
-        android:label="fragment_result"
-        tools:layout="@layout/fragment_result" >
-        <argument
-            android:name="result"
-            app:argType="string"
-            android:defaultValue="TIDAK DAPAT DIKLASIFIKASI" />
-    </fragment>
+        tools:layout="@layout/fragment_classification" />
 </navigation>

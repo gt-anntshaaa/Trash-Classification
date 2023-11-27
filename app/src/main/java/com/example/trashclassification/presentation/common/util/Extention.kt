@@ -3,6 +3,7 @@ package com.example.trashclassification.presentation.common.util
 import android.content.Context
 import android.view.View
 import android.view.WindowInsetsController
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
@@ -15,6 +16,10 @@ fun View.show(){
 
 fun View.hide(){
     visibility = View.GONE
+}
+
+fun Context.toast(message: String, duration: Int = 0){
+    Toast.makeText(this, message, duration).show()
 }
 
 fun ComponentActivity.setupFullScreen(){

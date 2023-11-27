@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -21,6 +22,7 @@ import com.example.trashclassification.presentation.common.resources.UIState
 import com.example.trashclassification.presentation.common.util.Constant.IMAGE_SIZE
 import com.example.trashclassification.presentation.common.util.helper.imageProcessing
 import com.example.trashclassification.presentation.common.util.show
+import com.example.trashclassification.presentation.common.util.toast
 import dagger.hilt.android.AndroidEntryPoint
 import java.lang.Integer.min
 
@@ -41,6 +43,10 @@ class ClassificationFragment : Fragment() {
             classificationViewModel.setImage(uri)
         }
     }
+
+//    private val imageFromCamera = registerForActivityResult(ActivityResultContracts.PickVisualMedia()){
+//        it?.let { uri -> classificationViewModel.setImage(uri) }
+//    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -101,13 +107,10 @@ class ClassificationFragment : Fragment() {
             when(uiState){
                 is UIState.Loading -> {}
                 is UIState.Success -> {
-                    //val data = Garbage(name = uiState.data, description = res)
-                    Toast.makeText(requireContext(), uiState.data, Toast.LENGTH_LONG).show()
-//                    val action = ClassificationFragmentDirections.actionClassificationToResult(uiState.data)
-//                    findNavController().navigate(action)
+                    requireContext().toast(uiState.data, 1)
                 }
                 is UIState.Failure -> {
-                    Toast.makeText(requireContext(), uiState.message, Toast.LENGTH_SHORT).show()}
+                    requireContext().toast(uiState.message)}
             }
         })
     }
@@ -121,17 +124,18 @@ class ClassificationFragment : Fragment() {
         binding.extendedTakePic.shrink()
         binding.extendedTakePic.setOnClickListener {  uiViewModel.checkFab()}
         binding.galeriFab.setOnClickListener { imageFromGaleri.launch("image/*") }
+        //binding.cameraFab.setOnClickListener { imageFromCamera.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)) }
     }
 
 
     private fun hideView() {
-        binding.cameraFab.hide()
+        //binding.cameraFab.hide()
         binding.galeriFab.hide()
         binding.extendedTakePic.shrink()
     }
 
     private fun showView() {
-        binding.cameraFab.show()
+        //binding.cameraFab.show()
         binding.galeriFab.show()
         binding.extendedTakePic.extend()
     }

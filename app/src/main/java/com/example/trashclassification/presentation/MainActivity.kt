@@ -7,13 +7,17 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.example.trashclassification.R
 import com.example.trashclassification.databinding.ActivityMainBinding
+import com.example.trashclassification.ml.ModelUnquant
 import com.example.trashclassification.presentation.common.util.hide
 import com.example.trashclassification.presentation.common.util.show
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+
+    @Inject lateinit var modelUnquant: ModelUnquant
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,5 +45,10 @@ class MainActivity : AppCompatActivity() {
     private fun initView() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        modelUnquant.close()
     }
 }

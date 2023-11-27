@@ -6,6 +6,9 @@ plugins {
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
 
+    // Parcelize
+    id("kotlin-parcelize")
+
     // SafeArgs - Navigation Components
     id("androidx.navigation.safeargs.kotlin")
 }

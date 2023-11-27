@@ -78,16 +78,16 @@
                 app:layout_constraintEnd_toStartOf="@id/galeri_fab"
                 app:icon="@drawable/ic_add_photo_24"
                 android:text="@string/images"/>
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/camera_fab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@id/extended_take_pic"
-                app:layout_constraintEnd_toStartOf="@id/galeri_fab"
-                app:layout_constraintBottom_toBottomOf="@id/extended_take_pic"
-                app:fabSize="mini"
-                android:src="@drawable/ic_camera"
-                android:contentDescription="@string/camera" />
+<!--            <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--                android:id="@+id/camera_fab"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintStart_toEndOf="@id/extended_take_pic"-->
+<!--                app:layout_constraintEnd_toStartOf="@id/galeri_fab"-->
+<!--                app:layout_constraintBottom_toBottomOf="@id/extended_take_pic"-->
+<!--                app:fabSize="mini"-->
+<!--                android:src="@drawable/ic_camera"-->
+<!--                android:contentDescription="@string/camera" />-->
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/galeri_fab"
                 android:layout_width="wrap_content"
@@ -95,8 +95,10 @@
                 app:layout_constraintBottom_toBottomOf="@id/extended_take_pic"
                 app:fabSize="mini"
                 android:layout_marginEnd="@dimen/_2sdp"
+                android:layout_marginStart="@dimen/_2sdp"
                 android:src="@drawable/ic_image_24"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/extended_take_pic"
                 android:contentDescription="@string/galeri" />
             <Button
                 android:id="@+id/result_btn"

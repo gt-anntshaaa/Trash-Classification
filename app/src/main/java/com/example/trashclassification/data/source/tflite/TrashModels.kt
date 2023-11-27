@@ -59,7 +59,7 @@ class TrashModels @Inject constructor(private val modelUnquant: ModelUnquant) {
             Log.e(TAG, "processTrashClassifications: ${e.message}", )
             e.message ?: "error during classification"
         }finally {
-            modelUnquant.close()
+            //modelUnquant.close()
         }
     }
 
