@@ -2,6 +2,8 @@
 Aplikasi "Trash Classification" merupakan sebuah aplikasi yang dapat digunakan untuk melakukan klasifikasi terhadap jenis sampah berdasarkan gambar.
 Aplikasi ini mampu melakukan deteksi gambar sampah yaitu sampah organik dan anorganik.
 
+![App](https://github.com/gt-anntshaaa/Trash-Classification/blob/master/video_2023-11-27_23-56-14.gif)
+
 **BUILD WITH**
 - [Kotlin](https://kotlinlang.org/)
 - [Android Architecture Componenes](https://developer.android.com/topic/architecture)
